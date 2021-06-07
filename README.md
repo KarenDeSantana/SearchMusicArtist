@@ -12,7 +12,7 @@ Angular app for searching music artists with Last.fm API
 * Package Manager: npm 6.14.13
 
 ## Installation
-1. Clone this repo `git clone https://github.com/KarenDeSantana/SearchMusicArtist`
+1. Clone this repo `git clone https://github.com/KarenDeSantana/SearchMusicArtist.git`
 1. `cd` into the folder of the cloned repo
 1. Run `npm install` to install dependencies
 1. Update the `LastFM API Key`
