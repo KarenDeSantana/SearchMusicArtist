@@ -1,0 +1,12 @@
+<header>
+    <mat-toolbar color="primary">
+      <h1 [routerLink]="['/artists']">{{title}}</h1>
+      <span class="spacer"></span>
+        <span>Compare artists</span>
+      <span class="spacer"></span>
+      <button mat-icon-button>
+        <mat-icon>search</mat-icon>
+      </button>
+      <app-search></app-search>
+    </mat-toolbar>
+  </header>

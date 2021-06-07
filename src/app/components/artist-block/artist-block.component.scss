@@ -1,0 +1,25 @@
+/***
+* ARTIST BLOCK
+***/
+
+.artist {
+    width:800px; 
+    margin: 30px auto;
+    overflow: hidden;
+    max-height: 220px;
+}
+
+.artist-img {
+    float: left
+}
+
+.artist-img img {
+    display: block
+}
+.artist-info {
+    margin-left: 210px
+}
+.artist-title {
+    font-weight: bold;
+    font-size: 200%
+}

@@ -1,0 +1,27 @@
+/***
+* TOP 5 BLOCK
+***/
+
+.track {
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.track-img {
+    float: left
+}
+
+.track-img img {
+    display: block
+}
+.track-info {
+    margin-left: 50px
+}
+.track-title {
+    font-weight: bold;
+    font-size: 16px
+}
+
+.track-play {
+    font-weight: lighter;
+}

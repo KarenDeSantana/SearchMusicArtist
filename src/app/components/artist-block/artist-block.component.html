@@ -1,0 +1,8 @@
+<div class="artist">                
+    <div class="artist-img"><img src="{{ imgPath }}" /></div>
+    <div class="artist-info">
+        <h3 class="artist-title">{{ title }}</h3>
+        <p class="artist-desc">{{ description }}</p>
+        <button mat-raised-button color="primary" [routerLink]="['/artists', name ]">More</button>
+    </div>
+</div>

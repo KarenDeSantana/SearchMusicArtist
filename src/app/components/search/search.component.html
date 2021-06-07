@@ -1,0 +1,15 @@
+<form class="search-form">
+    <mat-form-field class="search-field">
+      <mat-label>Search</mat-label>
+      <input matInput
+             aria-label="State"
+             [matAutocomplete]="auto"
+             [formControl]="artistCtrl">
+      <mat-autocomplete #auto="matAutocomplete">
+          <mat-option [routerLink]="['/artists', artist.name ]" *ngFor="let artist of artists" [value]="artist.name">
+              <img class="search-img" aria-hidden [src]="artist.image[0]['#text']" height="25">
+              <span>{{artist.name}}</span>
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>

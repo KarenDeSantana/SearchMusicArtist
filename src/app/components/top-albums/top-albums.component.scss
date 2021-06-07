@@ -1,0 +1,27 @@
+/***
+* TOP 5 BLOCK
+***/
+
+.album {
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.album-img {
+    float: left
+}
+
+.album-img img {
+    display: block
+}
+.album-info {
+    margin-left: 50px
+}
+.album-title {
+    font-weight: bold;
+    font-size: 16px
+}
+
+.album-play {
+    font-weight: lighter;
+}

@@ -1,0 +1,52 @@
+/***
+* ARTIST DETAILS
+***/
+
+.artist-details {
+    h1 {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 32px;
+    }
+
+    .description {
+        text-align: center;
+        margin: 20px 250px 50px;
+        position: relative;
+        font-size: 16px;
+        font-weight: 300;
+        text-align: left;
+    }
+}
+
+.bannerimage {
+    width: 100%;
+    height: 191px;
+    background-position: center;
+}
+
+.plays-listeners {
+    text-align: center;
+
+    .number {
+        display: block;
+        font-weight: bold;
+        font-size: 32px;
+        color: #c2185b;
+        margin: 20px 0;
+    }
+
+    .text {
+        display: block;
+        font-size: 20px;
+    }
+}
+
+.row {
+    display: flex;
+  }
+  
+.col {
+    flex: 50%;
+    margin: 0 100px 0 200px;
+}

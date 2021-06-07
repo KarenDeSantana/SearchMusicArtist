@@ -1,0 +1,4 @@
+<div [class.collapsed]="isCollapsed">
+    <ng-content></ng-content>
+</div>
+<div class="read-more" (click)="isCollapsed = !isCollapsed">{{ isCollapsed ? 'Read More': 'Read Less' }}</div>
