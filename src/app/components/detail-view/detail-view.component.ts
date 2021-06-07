@@ -2,12 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ConfigService } from '../../config/config.service';
 import { ActivatedRoute } from '@angular/router';
 
-export interface Tile {
-  cols: number;
-  rows: number;
-  text: string;
-}
-
 @Component({
   selector: 'app-detail-view',
   templateUrl: './detail-view.component.html',
@@ -21,27 +15,28 @@ export class DetailViewComponent implements OnInit {
   topAlbums!: any;
 
   constructor(private route: ActivatedRoute, private configService: ConfigService) {
-    this.route.params.subscribe( params => this.artistName = params.name );
+    // get params from routerLink
+    this.route.params.subscribe(params => this.artistName = params.name);
   }
 
+  // get artist info and formatting description
   getArtist(): void {
     this.configService.getArtist(this.artistName).subscribe((data: any) => {
-      console.log(data.artist);
-       this.artistData = data.artist;
-       this.artistData.bio.content = this.artistData.bio.content.replaceAll("\n", "<br>");
+      this.artistData = data.artist;
+      this.artistData.bio.content = this.artistData.bio.content.replaceAll("\n", "<br>");
     });
   }
 
-  getTop5Tracks():void {
+  // get the top 5 tracks from artist
+  getTop5Tracks(): void {
     this.configService.getTop5Tracks(this.artistName).subscribe((data: any) => {
-      console.log(data.toptracks);
       this.topTracks = data.toptracks;
     });
   }
 
-  getTop5Albums():void {
+  // get the top 5 albums from artist
+  getTop5Albums(): void {
     this.configService.getTop5Albums(this.artistName).subscribe((data: any) => {
-      console.log(data.topalbums);
       this.topAlbums = data.topalbums;
     });
   }
@@ -51,5 +46,4 @@ export class DetailViewComponent implements OnInit {
     this.getTop5Albums();
     this.getTop5Tracks();
   }
-
 }

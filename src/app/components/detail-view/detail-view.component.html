@@ -6,14 +6,14 @@
         <h1>{{ artistData.name }}</h1>
         <div class="description">
             <app-read-more>
-                <p [innerHtml]="artistData.bio.content" ></p>
+                <p [innerHtml]="artistData.bio.content"></p>
             </app-read-more>
         </div>
 
         <div class="plays-listeners">
             <span class="number">{{ artistData.stats.listeners }}</span>
             <span class="text">Listeners</span> <br>
-            
+
             <span class="number">{{ artistData.stats.playcount }}</span>
             <span class="text">Plays</span>
         </div>
@@ -22,22 +22,16 @@
     <div class="row">
         <div class="col">
             <h1>Top 5 Tracks</h1>
-            <app-top-tracks *ngFor="let track of topTracks?.track"
-            trackTitle="{{ track.name }}"
-            trackPlay="{{ track.playcount }}"
-            trackImgPath="{{ track.image[0]['#text'] }}"
-            ></app-top-tracks>
+            <app-top-tracks *ngFor="let track of topTracks?.track" trackTitle="{{ track.name }}"
+                trackPlay="{{ track.playcount }}" trackImgPath="{{ track.image[0]['#text'] }}"></app-top-tracks>
         </div>
         <div class="col">
             <h1>Top 5 Albums</h1>
-            <app-top-albums *ngFor="let album of topAlbums?.album"
-            albumTitle="{{ album.name }}"
-            albumPlay="{{ album.playcount }}"
-            albumImgPath="{{ album.image[0]['#text'] }}"
-            ></app-top-albums>
+            <app-top-albums *ngFor="let album of topAlbums?.album" albumTitle="{{ album.name }}"
+                albumPlay="{{ album.playcount }}" albumImgPath="{{ album.image[0]['#text'] }}"></app-top-albums>
         </div>
     </div>
-        
+
 </main>
 
 <app-footer></app-footer>
