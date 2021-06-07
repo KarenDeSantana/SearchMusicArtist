@@ -6,7 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./artist-block.component.scss']
 })
 export class ArtistBlockComponent {
-
   @Input() title: String = '';
   @Input() description: String = '';
   @Input() imgPath: String = 'http://dummyimage.com/200x200/f0f/fff';

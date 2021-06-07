@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
 import { ConfigService } from '../../config/config.service';
 
 export interface Artist {
@@ -15,10 +14,9 @@ export interface Artist {
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent {
   artistCtrl = new FormControl();
   filteredArtists!: Observable<Artist[]>;
-
   artists!: any[];
 
   constructor(private configService: ConfigService) {
@@ -26,12 +24,7 @@ export class SearchComponent implements OnInit {
       .subscribe((searchString: string)=>{
         this.configService.searchArtist(searchString).subscribe((data: any)=>{
           this.artists = data.results.artistmatches.artist;
-          console.log(this.artists);
         });
       })
-  }
-
-  ngOnInit() {
-
   }
 }
