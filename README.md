@@ -23,8 +23,6 @@ Angular app for searching music artists with Last.fm API
         export class ConfigService {
           API_KEY_LASTFM = '<your-lastFM-API-key-goes-here>';
 
-            API_KEY_LASTFM = <your-lastFM-API-key-goes-here>
-
             constructor(private http: HttpClient) { }
         ```
 1. Run `ng serve`, and navigate to `http://localhost:4200/`
