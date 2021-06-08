@@ -7,11 +7,11 @@ import { DetailViewComponent } from './components/detail-view/detail-view.compon
 const routes: Routes = [
   { path: '', redirectTo: 'artists', pathMatch: 'full'},
   { path: 'artists', component: MainViewComponent },
-  { path: 'artists/:name', component: DetailViewComponent },
+  { path: 'artists/:name', component: DetailViewComponent, runGuardsAndResolvers: 'always'},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

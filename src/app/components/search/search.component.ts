@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ConfigService } from '../../config/config.service';
 
@@ -19,12 +20,17 @@ export class SearchComponent {
   filteredArtists!: Observable<Artist[]>;
   artists!: any[];
 
-  constructor(private configService: ConfigService) {
+  constructor(private configService: ConfigService, private router: Router) {
+
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    
     this.artistCtrl.valueChanges
       .subscribe((searchString: string)=>{
+      if (searchString) {
         this.configService.searchArtist(searchString).subscribe((data: any)=>{
           this.artists = data.results.artistmatches.artist;
         });
-      })
+      }
+    })
   }
 }

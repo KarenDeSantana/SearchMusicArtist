@@ -40,6 +40,8 @@ export class MainViewComponent implements OnInit {
 
       for (let i = 0; i < this.top10?.artist.length; i++) {
         this.configService.getArtist(this.top10?.artist[i].name).subscribe((data: any) => {
+          
+          // removes lastfm link, due to styling issues
           let end = data.artist.bio.summary.indexOf('<a ');
           this.top10.artist[i].description = data?.artist.bio.summary.substr(0, end);
         });
